@@ -1,0 +1,75 @@
+#page2{
+    background: url(../img/p2/bj.png) no-repeat;
+    background-size: 100% 100%;
+}
+.page2_circle{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    margin-left: -165px;
+    margin-top: -165px;    
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    animation: circle 10s infinite linear;
+}
+.page2_circle>img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin-left: -40px;
+    margin-top: -40px;
+    animation: circle 5s infinite linear;
+}
+.page2_circle>img:nth-child(1){
+    top: 50%;
+    left: 0;
+}
+.page2_circle>img:nth-child(2){
+    top: 50%;
+    left: 100%;
+}
+.page2_circle>img:nth-child(3){
+    top: 0;
+    left: 50%;
+}
+.page2_circle>img:nth-child(4){
+    top: 100%;
+    left: 50%;
+}
+@keyframes circle{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+}
+.page2_font{
+    width: 220px;
+    height: 80px;
+    margin-top: 150px;
+    margin-left: 60px;
+}
+.page2_font>img{
+    width: 220px;
+    height: 80px;
+}
+.page2_meat{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 220px;
+    height: 160px;
+    margin-left: -110px;
+    margin-top: -80px;
+}
+.page2_meat>img{
+    width: 220px;
+    height: 160px;
+}
+#page2>img{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    margin-left: -300px;
+    margin-top: -300px;    
+    width: 600px;
+    height: 600px;
+}

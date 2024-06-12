@@ -1,0 +1,23 @@
+:root {
+  --scale: 1.5
+  --y: 0;
+  overflow: hidden;
+}
+:root body {
+  margin: 0;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+:root body #wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+:root body #wrapper #image {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../image/photo-1539035104074-dee66086b5e3.jpg"/*tpa=https://www.hereitis.cn/project/d6hkst3nwxa8/static/image/photo-1539035104074-dee66086b5e3.jpg*/);
+  background-size: cover;
+  transform: translateX(var(--x)) translateY(var(--y)) scale(var(--scale));
+  transition: ease-out 0.7s;
+}

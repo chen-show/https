@@ -1,0 +1,437 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}
+.box{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	transition: all 1s ease-in-out; 
+	/* transform: translateY(-400vh); */
+}
+.page{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.music{
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	top: 50px;
+	right: 50px;
+	margin-top: -15px;
+	margin-right: -15px;
+}
+.music>img{
+	width: 30px;
+	height: 30px;
+	animation: music 2s infinite linear;
+}
+@keyframes music{
+	from{transform: rotate(0);}
+	to{transform: rotate(360deg);}
+}
+
+#page1{
+	background: url(../imager/wild_chila/P1/bj.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.page1_circle{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px; 
+	margin-left: -200px;
+}
+.page1_circle>img{
+	position: absolute;
+	top: 90%;
+	left: 90%;
+	width: 10px;
+	height: 10px;
+	transform-origin: -250px 0; 
+	animation: page1circle 3s forwards;
+}
+@keyframes page1circle{
+	from{transform: rotateZ(0); width: 10px;height: 10px;opacity: 0;}
+	to{transform: rotateZ(-90deg);width: 45px;height: 45px;opacity: 1;}
+}
+.page1_font{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 240px;
+	height: 300px;
+	margin-top: -150px;
+	margin-left: -120px;
+}
+.page1_font>img{
+	width: 240px;
+	height: 300px;
+	opacity: 0;
+	animation: page1font 2s 2s forwards;
+}
+@keyframes page1font{
+	from{transform: translateY(0);opacity: 0;}
+	to{transform: translateY(-68px);opacity: 1;}
+}
+.page1_btn{
+	position: absolute;
+	top: 76%;
+	left: 50%;
+	width: 150px;
+	height: 50px;
+	margin-top: -25px;
+	margin-left: -75px;
+}
+.page1_btn>img{
+	width: 150px;
+	height: 50px;
+	opacity: 0;
+	animation: page1btn 2s 4s forwards;
+}
+@keyframes page1btn{
+	from{transform: scale(0);opacity: 0;}
+	to{transform: scale(1);opacity: 1;}
+}
+#page2>.page2_content{
+	width: 300%;
+	height: 100%;
+	background: url(../imager/wild_chila/P2/bj.png) no-repeat;
+	background-size: 100% 100%;
+}
+.page2_bus{
+	position: absolute;
+	top: 74%;
+	left: 12%;
+	width: 80px;
+	height: 50px;
+	margin-top: -25px;
+	margin-left: -40px;
+}
+.page2_bus>img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 50px;
+	animation: page2bus 1.2s linear infinite;
+}
+@keyframes page2bus{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+.page2_font{
+	position: absolute;
+	top: 88%;
+	left: 50%;
+	width: 320px;
+	height: 140px;
+	margin-top: -70px;
+	margin-left: -160px;
+}
+.page2_font>span{
+	color: #aaffff;
+	font-size: 18px;
+	display: none;
+}
+
+#page3{
+	background: url(../imager/wild_chila/P3/bj.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.page3_font{
+	width: 400px;
+	height: 360px;
+	margin: 0 auto;
+}
+.page3_font>img:nth-child(1){
+	display: block;
+	width: 400px;	
+	object-fit: cover;
+	height: 60px;
+	padding-top: 50px;
+	margin: 0 auto;
+	opacity: 0;
+	animation: page3img 1s 1s forwards;
+}
+.page3_font>img:nth-child(2){
+	display: block;
+	object-fit: contain;
+	width: 360px;
+	height: 160px;
+	padding-top: 50px;
+	margin: 0 auto;
+	opacity: 0;
+	animation: page3img 1s 2s forwards;
+}
+@keyframes page3img{
+	0%{transform: translateY(0); opacity: 0;}
+	100%{transform: translateY(50px); opacity: 1;}
+}
+.page3_circle{
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	width: 450px;
+	height: 300px;
+	margin-top: -155px;
+	margin-left: -225px;
+	opacity: 0;
+	animation: page3circle 1s 4s forwards;
+}
+@keyframes page3circle{
+	0%{transform: translateY(30px); opacity: 0;}
+	100%{transform: translateY(0); opacity: 1;}
+}
+.page3_circle>img:nth-child(1){
+	display: block;
+	margin: 0 auto;
+	margin-bottom: -64px;
+	width: 250px;
+	height: 120px;
+}
+.page3_circle>img:nth-child(2){
+	display: block;
+	margin: 0 auto;
+	width: 360px;
+	height: 240px;
+}
+.page3_circle>.leye{
+	position: absolute;
+	top: 45%;
+	left: 43%;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	margin-left: -15px;
+	border-radius: 50% 80%;
+	transform: rotate(45deg);
+	animation: eye 3s infinite linear;
+}
+.page3_circle>.leye>img{
+	width: 16px;
+	height: 16px;
+}
+.page3_circle>.reye{
+	position: absolute;
+	top: 45%;
+	left: 58%;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	margin-left: -15px;
+	border-radius: 50% 80%;
+	transform: rotate(45deg);
+	animation: eye 3s infinite linear;
+}
+.page3_circle>.reye>img{
+	width: 16px;
+	height: 16px;
+}
+@keyframes eye{
+	from{transform: rotate(0);}
+	to{transform: rotate(360deg);}
+}
+#page4{
+	background: url(../imager/wild_chila/P4/bj.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.page4_hook{
+	width: 500px;
+	height: 400px;
+	margin: 0 auto;
+}
+.page4_hook>img{
+	position: absolute;
+	width: 320px;
+	margin-left: -50px;
+	height: 100px;
+}
+.page4_hook>.page4_mast{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	transform-origin: center top;
+	animation: page4mast 3s infinite linear;
+}
+@keyframes page4mast{
+	0%{transform: rotate(45deg);}
+	25%{transform: rotate(0);}
+	50%{transform: rotate(-45deg);}
+	75%{transform: rotate(0);}
+	100%{transform: rotate(45deg);}
+}
+.page4_hook>.page4_mast>img:nth-child(1){
+	width: 40px;
+	height: 100px;
+	position: absolute;
+	top: 7%;
+	left: 52.5%;
+	margin-top: -50px;
+	margin-left: -20px;
+}
+.page4_hook>.page4_mast>img:nth-child(2){
+	width: 240px;
+	height: 150px;
+	position: absolute;
+	top: 30%;
+	left: 52%;
+	margin-top: -75px;
+	margin-left: -120px;
+}
+.page4_house>img:nth-child(1){
+	width: 640px;
+	height: 60px;
+	position: absolute;
+	top: 56%;
+	left: 50%;
+	margin-top: -30px;
+	margin-left: -320px;
+	animation: page4house 2s infinite linear;
+}
+@keyframes page4house{
+	0%{opacity: 0;}
+	50%{opacity: 1;}
+	100%{opacity: 0;}
+}
+.page4_house>img:nth-child(2){
+	width: 360px;
+	height: 240px;
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	margin-top: -120px;
+	margin-left: -180px;
+}
+#page5{
+	background: url(../imager/wild_chila/P5/bj.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.page5_content{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 64%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -150px;
+}
+.page5_content>img{
+	width: 100px;
+	height: 60px;
+	margin: 20px 0 0 30px;
+}
+.page5_text{
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	width: 200px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -100px;
+	box-shadow: 0 0 1px 1px #00FFFF;
+	border-radius: 50px;
+}
+.page5_text>span{
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	font-size: 600;
+	color: #aaaa00;
+	letter-spacing: 8px;
+}
+.page5_btn{
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	width: 300px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -150px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.page5_btn>button{
+	width: 120px;
+	height: 40px;
+	background-color: rgba(206, 251, 255, 0.3);
+	border-radius: 50px;
+	outline: none;
+	color: #550000;
+	font-size: 16px;
+}
+
+#page6{
+	background: url(../imager/wild_chila/P6/bj.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.page6_content{
+	width: 400px;
+	height: 800px;
+	margin: 0 auto;
+}
+.page6_content>img:nth-child(1){
+	width: 400px;
+	height: 300px;
+	object-fit: cover;
+	margin: 80px auto;
+	animation: page6house 2s forwards;
+}
+@keyframes page6house{
+	0%{transform: translateY(30px); opacity: 0;}
+	100%{transform: translateY(-50px); opacity: 1;}
+}
+.page6_content>img:nth-child(2){
+	width: 400px;
+	height: 100px;
+	display: block;
+	margin: -80px auto;
+	opacity: 0;
+	animation: page6font 2s 2s forwards;
+}
+@keyframes page6font{
+	0%{transform: rotate(0) scale(.2); opacity: 0;}
+	100%{transform: rotate(360deg) scale(1.2); opacity: 1;}
+}
+.page6_content>a{
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	width: 200px;
+	height: 80px;
+	color: #782211;
+	font-size: 30px;
+	font-weight: 660;
+	text-align: center;
+	line-height: 80px;
+	box-shadow: 0 0 3px 3px #46B8DA;
+	margin-top: -40px;
+	margin-left: -100px;
+	animation: page6a 2s 4s infinite linear;
+}
+@keyframes page6a{
+	0%{transform: scale(.9);}
+	50%{transform: scale(1);}
+	100%{transform: scale(.9);}
+}

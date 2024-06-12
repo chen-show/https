@@ -1,0 +1,40 @@
+#page6{
+    background: url(../img/p6/bj.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.page_issue{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -150px;
+	display: none;
+}
+.page_issue:nth-child(1){
+    display: block;
+}
+.page_issue>p{
+	margin: 30px auto;
+	width: 240px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #1D9898;
+	font-size: 24px;
+	box-shadow: 0 0 1px 1px #000088;
+	border-radius: 50px;
+}
+.page6_content>h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 30px;
+    margin-left: -150px;
+    margin-top: -15px;
+    color: rgb(133, 133, 133);
+    text-align: center;
+    display: none;
+}

@@ -1,0 +1,110 @@
+#page8{
+    background-color: rgb(196, 227, 255);
+    background-size: 100% 100%;
+}
+.page8_title{
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page8_title>span{
+    margin: 0 20px;
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(99, 99, 99);
+    cursor: pointer;
+    background-color: paleturquoise;
+    box-shadow: 0 0 1px 2px #dcffcb;
+}
+.page8_content{
+    width: 100%;
+    height: 100%;
+    background: url(../img/p8/border.png) no-repeat;
+    background-size: 100% 100%;
+}
+.page8_content>img{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    margin-left: -150px;
+    margin-top: -100px;
+}
+.show_div{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    display: none;
+}
+.show_div:nth-of-type(1){
+    display: block;
+}
+.show_div>p{
+    font-size: 30px;
+    color: red;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    display: block;
+    line-height: 120px;
+}
+.show_div>strong{
+    font-size: 30px;
+    color: red;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-left: 40%;
+}
+.show_div>div{
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.show_div>div>b{
+    text-align: center;
+}
+.show_div>div>span{
+    text-align: center;
+    padding-left: 3px;
+}
+.show_div>img:nth-of-type(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    margin-left: -120px;
+    margin-top: -120px;
+}
+
+
+.love{
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    position: absolute;
+    top: 0;
+	left: 0;
+	z-index: 9999999;
+	background: url(../img/p8/love.PNG) no-repeat;
+	background-size: 100% 100%;
+    animation: page8_love 2s forwards;
+}
+@keyframes page8_love{
+    0%{transform: translateY(0); opacity: .6;}
+    50%{transform: translateY(-80px); opacity: 1;}
+    100%{transform: translateY(-120px); opacity: 0;}
+}

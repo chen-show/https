@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"
+    name="viewport">
+  <link rel="icon" href="../2023/favicon.ico">
+  <title>移车呼叫</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="./three.min.js" ></script>
+  <script src="./TweenMax.min.js" ></script>
+  <script src="./OrbitControls.js"></script>
+  <script src="./GLTFLoader.js"></script>
+  <script src="./RGBELoader.js"></script>
+</head>
+
+<body>
+  <div class="topTipText">
+    <div class="roof">
+      <div class="roof_l">
+        <img src="./QRCode.png" alt="">
+      </div>
+      <div class="roof_r">
+        <p>临停马上到</p>
+        <p>挪车请关照</p>
+      </div>
+    </div>
+    <div class="licensePlateNumber">
+      <span></span>
+    </div>
+  </div>
+  <div class="phoneCenter" id="callOut">
+    <div class="phone">
+      <img src="./phone.png" alt="">
+    </div>
+    <p>
+      <a id="callOutPhone">点击呼叫</a>
+    </p>
+  </div>
+  <div class="wrapper" style="zoom: 0.5;">
+    <div class="body"></div>
+    <div class="ear ear_l"></div>
+    <div class="ear ear_r"></div>
+    <div class="arm arm_l"></div>
+    <div class="arm arm_r">
+      <div class="heart">
+        <div class="heart_l"></div>
+        <div class="heart_r"></div>
+      </div>
+    </div>
+    <div class="leg leg_l"></div>
+    <div class="leg leg_r"></div>
+    <div class="face">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="line line4"></div>
+      <div class="eye eye_l">
+        <div class="eye-c1">
+          <div class="eye-c2">
+            <div class="eye-c3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="eye eye_r">
+        <div class="eye-c1">
+          <div class="eye-c2">
+            <div class="eye-c3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nose">
+        <div class="nose-c"></div>
+      </div>
+      <div class="mouth"></div>
+      <div class="mouth-c"></div>
+    </div>
+  </div>
+  <div class="ref3DCar">
+    <div class="load"></div>
+    <div class="candle">
+      <div class="candles">
+        <div class="light__wave"></div>
+        <div class="candle1">
+          <div class="candle1__body">
+            <div class="candle1__eyes">
+              <span class="candle1__eyes-one"></span>
+              <span class="candle1__eyes-two"></span>
+            </div>
+            <div class="candle1__mouth"></div>
+          </div>
+          <div class="candle1__stick"></div>
+        </div>
+        
+        <div class="candle2">
+          <div class="candle2__body">
+            <div class="candle2__eyes">
+              <div class="candle2__eyes-one"></div>
+              <div class="candle2__eyes-two"></div>
+            </div>
+          </div>
+          <div class="candle2__stick"></div>
+        </div>
+        <div class="candle2__fire"></div>
+        <div class="sparkles-one"></div>
+        <div class="sparkles-two"></div>
+        <div class="candle__smoke-one">
+
+        </div>
+        <div class="candle__smoke-two">
+
+        </div>
+        
+      </div>
+      <div class="floor"></div>
+    </div>
+  </div>
+  <div class="bottomInfo">
+    <a href="http://chen-show.gitee.io/vue/">@成同学.com</a>
+  </div>
+</body>
+
+<!-- <script src="./index.js"></script> -->
+<script src="./chen.js"></script>
+
+</html>

@@ -1,0 +1,549 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.4, user-scalable=no">
+  <link rel="icon" href="love.ico">
+  <title>xxx生日快乐</title>
+  <style>
+    html,
+    body {
+      margin: 0px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 800px;
+      position: fixed;
+      bottom: 3%;
+      right: 5%;
+      z-index: 99999999;
+    }
+
+    .box {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: run 10s infinite linear;
+    }
+
+    @keyframes run {
+      0% {
+        transform: rotateY(0) translate(360deg);
+      }
+
+      100% {
+        transform: rotateY(360deg) translate(0);
+      }
+    }
+
+    a {
+      position: absolute;
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+    }
+
+    img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .top {
+      transform: translateY(-100px) rotateX(90deg);
+    }
+
+    .bottom {
+      transform: translateY(100px) rotateX(90deg);
+    }
+
+    .right {
+      transform: translateX(100px) rotateY(90deg);
+    }
+
+    .left {
+      transform: translateX(-100px) rotateY(90deg);
+    }
+
+    .before {
+      transform: translateZ(100px);
+    }
+
+    .after {
+      transform: translateZ(-100px);
+    }
+
+    .box:hover .top {
+      transform: translateY(-80px) rotateX(90deg);
+    }
+
+    .box:hover .bottom {
+      transform: translateY(80px) rotateX(90deg);
+    }
+
+    .box:hover .right {
+      transform: translateX(80px) rotateY(90deg);
+    }
+
+    .box:hover .left {
+      transform: translateX(-80px) rotateY(90deg);
+    }
+
+    .box:hover .before {
+      transform: translateZ(80px);
+    }
+
+    .box:hover .after {
+      transform: translateZ(-80px);
+    }
+  </style>
+
+</head>
+
+<body>
+  <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
+  <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
+  <div>
+    <marquee behavior="scroll" direction="left" scrollamount="36">
+      <font color="red" size="15px" id="nameId">xxx-生日快乐</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="#e0e0e0" size="15px">💕 不止生日快乐 💕 💖 生日不止快乐 💖 💞 生日快乐不止 💞</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="#fdbb2d" size="15px">此消息留给互联网回忆：生命的旅途中遇见你真好！</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="#e0e0e0" size="15px">不要像风，不要像云。做自己就好。</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="24">
+      <font color="#fc466b" size="15px">让一让，让一让，过生日啦！成长不期而遇，生日如期而至</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="30">
+      <font color="#489c84" size="15px">哪有什么惊世笔，是你与青春皆如诗。</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="32">
+      <font color="#fdbb2d" size="15px">离退休又近了一年; 人生经验值＋1</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="24">
+      <font color="#fc466b" size="15px">生活明朗，万物可爱，按时长大</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="26">
+      <font color="#364d69" size="15px">祝你我百事可乐，万事芬达，心情雪碧，一周七喜，天天娃哈哈，年年高乐高。</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="22">
+      <font color="#916911" size="15px">还是要长大，可爱不是长久之计</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="20">
+      <font color="#383122" size="15px">让我们恭喜这位幼儿园大班小朋友今日生日！</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="16">
+      <font color="#489c84" size="15px">梧高风必至，花香蝶自来。[比心][比心][比心]</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="16">
+      <font color="while" size="15px">请一直走，天一定会亮！</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="red" size="15px">会遗憾，但不会后悔；会争取，但不会强求；能低头，但有底线；会妥协，但有原则；希望这能是你.</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="22">
+      <font color="#916911" size="15px">改革春风吹满地，新的一岁要争气</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="20">
+      <font color="#383122" size="15px">如果有一天你好运来临，那一定是你努力所得，并非上天眷顾。</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="36">
+      <font color="while" size="15px">一岁一礼，一寸欢喜; 祝你快乐，不止生日</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="26">
+      <font color="#364d69" size="15px">青春是无解的命题: 永远风华正茂!</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="#e0e0e0" size="15px">愿成长，落落大方，枯木逢春，不负众望</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="red" size="15px">该用户内容已隐藏，回复“生日快乐”即可查看</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="22">
+      <font color="#916911" size="15px">你说天长，我就递酒</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="20">
+      <font color="#383122" id="countdown" size="15px">距离下次生日还有365天</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="36">
+      <font color="#364d69" size="15px">今天可是没有流星也可以许愿的日子</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="18">
+      <font color="red" size="15px">只要你自己不认怂，生活就拿你没办法！</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="36">
+      <font color="while" size="15px">好好善待自己 因为我们的零件很贵。而且还不好配，最重要的一点还不一定有货。</font>
+    </marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="24">
+      <font color="#BBC6E7" size="15px">
+        英俊潇洒，帅呆酷毙，风流倜傥，玉树临风，年少多知，聪明伶俐，活泼可爱，风度翩翩，气宇不凡，
+        全国杰出十大青年，更难得三岁习文，七岁习武，才高八斗，学富九年，上知天文地理，下晓鸡毛蒜皮，
+        无所不知无所不能无所不晓，每逢外出行走，常引美女回头帅哥跳楼，其优点多如滔滔江水连绵不断，
+        又犹如黄河泛滥一发不可收拾，真乃人中之龙，旷世奇才。
+      </font>
+    </marquee>
+  </div>
+  <div class="content">
+    <div class="box">
+      <a class="top">
+        <img src="./img/love.png" alt="">
+      </a>
+      <a class="bottom">
+        <img src="https://q1.qlogo.cn/g?b=qq&nk=2682073669&s=100&t=1420118110" alt="">
+      </a>
+      <a class="right">
+        <img src="./img/love.png" alt="">
+      </a>
+      <a class="left">
+        <img src="./img/love.png" alt="">
+      </a>
+      <a class="before">
+        <img src="https://q1.qlogo.cn/g?b=qq&nk=2682073669&s=100&t=1420118110" alt="">
+      </a>
+      <a class="after">
+        <img src="https://q1.qlogo.cn/g?b=qq&nk=2682073669&s=100&t=1420118110" alt="">
+      </a>
+    </div>
+  </div>
+  <script>
+    function initVars () {
+
+      const name = (GetRequest()['name'] || '祝你') + '-生日快乐'
+      const age = GetRequest()['age'] || ''
+      document.title = name
+      document.querySelector('#nameId').innerHTML = name
+      document.querySelector('#countdown').innerHTML = age ? age + '岁生日快乐' : ''
+      pi = Math.PI;
+      ctx = canvas.getContext("2d");
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      cx = canvas.width / 2;
+      cy = canvas.height / 2;
+      playerZ = -25;
+      playerX = playerY = playerVX = playerVY = playerVZ = pitch = yaw = pitchV = yawV = 0;
+      scale = 600;
+      seedTimer = 0; seedInterval = 5, seedLife = 100; gravity = .02;
+      seeds = new Array();
+      sparkPics = new Array();
+      s = "./ogg/";
+      for (i = 1; i <= 10; ++i) {
+        sparkPic = new Image();
+        sparkPic.src = "./img/spark" + i + ".png";
+        sparkPics.push(sparkPic);
+      }
+      sparks = new Array();
+      pow1 = new Audio(s + "pow1.ogg");
+      pow2 = new Audio(s + "pow2.ogg");
+      pow3 = new Audio(s + "pow3.ogg");
+      pow4 = new Audio(s + "pow4.ogg");
+      frames = 0;
+    }
+
+    function rasterizePoint (x, y, z) {
+
+      var p, d;
+      x -= playerX;
+      y -= playerY;
+      z -= playerZ;
+      p = Math.atan2(x, z);
+      d = Math.sqrt(x * x + z * z);
+      x = Math.sin(p - yaw) * d;
+      z = Math.cos(p - yaw) * d;
+      p = Math.atan2(y, z);
+      d = Math.sqrt(y * y + z * z);
+      y = Math.sin(p - pitch) * d;
+      z = Math.cos(p - pitch) * d;
+      var rx1 = -1000, ry1 = 1, rx2 = 1000, ry2 = 1, rx3 = 0, ry3 = 0, rx4 = x, ry4 = z, uc = (ry4 - ry3) * (rx2 - rx1) - (rx4 - rx3) * (ry2 - ry1);
+      if (!uc) return { x: 0, y: 0, d: -1 };
+      var ua = ((rx4 - rx3) * (ry1 - ry3) - (ry4 - ry3) * (rx1 - rx3)) / uc;
+      var ub = ((rx2 - rx1) * (ry1 - ry3) - (ry2 - ry1) * (rx1 - rx3)) / uc;
+      if (!z) z = .000000001;
+      if (ua > 0 && ua < 1 && ub > 0 && ub < 1) {
+        return {
+          x: cx + (rx1 + ua * (rx2 - rx1)) * scale,
+          y: cy + y / z * scale,
+          d: Math.sqrt(x * x + y * y + z * z)
+        };
+      } else {
+        return {
+          x: cx + (rx1 + ua * (rx2 - rx1)) * scale,
+          y: cy + y / z * scale,
+          d: -1
+        };
+      }
+    }
+
+    function spawnSeed () {
+
+      seed = new Object();
+      seed.x = -50 + Math.random() * 100;
+      seed.y = 25;
+      seed.z = -50 + Math.random() * 100;
+      seed.vx = .1 - Math.random() * .2;
+      seed.vy = -1.5;//*(1+Math.random()/2);
+      seed.vz = .1 - Math.random() * .2;
+      seed.born = frames;
+      seeds.push(seed);
+    }
+
+    function splode (x, y, z) {
+
+      t = 5 + parseInt(Math.random() * 150);
+      sparkV = 1 + Math.random() * 2.5;
+      type = parseInt(Math.random() * 3);
+      switch (type) {
+        case 0:
+          pic1 = parseInt(Math.random() * 10);
+          break;
+        case 1:
+          pic1 = parseInt(Math.random() * 10);
+          do { pic2 = parseInt(Math.random() * 10); } while (pic2 == pic1);
+          break;
+        case 2:
+          pic1 = parseInt(Math.random() * 10);
+          do { pic2 = parseInt(Math.random() * 10); } while (pic2 == pic1);
+          do { pic3 = parseInt(Math.random() * 10); } while (pic3 == pic1 || pic3 == pic2);
+          break;
+      }
+      for (m = 1; m < t; ++m) {
+        spark = new Object();
+        spark.x = x; spark.y = y; spark.z = z;
+        p1 = pi * 2 * Math.random();
+        p2 = pi * Math.random();
+        v = sparkV * (1 + Math.random() / 6)
+        spark.vx = Math.sin(p1) * Math.sin(p2) * v;
+        spark.vz = Math.cos(p1) * Math.sin(p2) * v;
+        spark.vy = Math.cos(p2) * v;
+        switch (type) {
+          case 0: spark.img = sparkPics[pic1]; break;
+          case 1:
+            spark.img = sparkPics[parseInt(Math.random() * 2) ? pic1 : pic2];
+            break;
+          case 2:
+            switch (parseInt(Math.random() * 3)) {
+              case 0: spark.img = sparkPics[pic1]; break;
+              case 1: spark.img = sparkPics[pic2]; break;
+              case 2: spark.img = sparkPics[pic3]; break;
+            }
+            break;
+        }
+        spark.radius = 25 + Math.random() * 50;
+        spark.alpha = 1;
+        spark.trail = new Array();
+        sparks.push(spark);
+      }
+      switch (parseInt(Math.random() * 4)) {
+        case 0: pow = new Audio(s + "pow1.ogg"); break;
+        case 1: pow = new Audio(s + "pow2.ogg"); break;
+        case 2: pow = new Audio(s + "pow3.ogg"); break;
+        case 3: pow = new Audio(s + "pow4.ogg"); break;
+      }
+      d = Math.sqrt((x - playerX) * (x - playerX) + (y - playerY) * (y - playerY) + (z - playerZ) * (z - playerZ));
+      pow.volume = 1.5 / (1 + d / 10);
+      pow.play();
+    }
+
+    function doLogic () {
+
+      if (seedTimer < frames) {
+        seedTimer = frames + seedInterval * Math.random() * 10;
+        spawnSeed();
+      }
+      for (i = 0; i < seeds.length; ++i) {
+        seeds[i].vy += gravity;
+        seeds[i].x += seeds[i].vx;
+        seeds[i].y += seeds[i].vy;
+        seeds[i].z += seeds[i].vz;
+        if (frames - seeds[i].born > seedLife) {
+          splode(seeds[i].x, seeds[i].y, seeds[i].z);
+          seeds.splice(i, 1);
+        }
+      }
+      for (i = 0; i < sparks.length; ++i) {
+        if (sparks[i].alpha > 0 && sparks[i].radius > 5) {
+          sparks[i].alpha -= .01;
+          sparks[i].radius /= 1.02;
+          sparks[i].vy += gravity;
+          point = new Object();
+          point.x = sparks[i].x;
+          point.y = sparks[i].y;
+          point.z = sparks[i].z;
+          if (sparks[i].trail.length) {
+            x = sparks[i].trail[sparks[i].trail.length - 1].x;
+            y = sparks[i].trail[sparks[i].trail.length - 1].y;
+            z = sparks[i].trail[sparks[i].trail.length - 1].z;
+            d = ((point.x - x) * (point.x - x) + (point.y - y) * (point.y - y) + (point.z - z) * (point.z - z));
+            if (d > 9) {
+              sparks[i].trail.push(point);
+            }
+          } else {
+            sparks[i].trail.push(point);
+          }
+          if (sparks[i].trail.length > 5) sparks[i].trail.splice(0, 1);
+          sparks[i].x += sparks[i].vx;
+          sparks[i].y += sparks[i].vy;
+          sparks[i].z += sparks[i].vz;
+          sparks[i].vx /= 1.075;
+          sparks[i].vy /= 1.075;
+          sparks[i].vz /= 1.075;
+        } else {
+          sparks.splice(i, 1);
+        }
+      }
+      p = Math.atan2(playerX, playerZ);
+      d = Math.sqrt(playerX * playerX + playerZ * playerZ);
+      d += Math.sin(frames / 80) / 1.25;
+      t = Math.sin(frames / 200) / 40;
+      playerX = Math.sin(p + t) * d;
+      playerZ = Math.cos(p + t) * d;
+      yaw = pi + p + t;
+    }
+
+    function rgb (col) {
+
+      var r = parseInt((.5 + Math.sin(col) * .5) * 16);
+      var g = parseInt((.5 + Math.cos(col) * .5) * 16);
+      var b = parseInt((.5 - Math.sin(col) * .5) * 16);
+      return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+    }
+
+    function draw () {
+
+      ctx.clearRect(0, 0, cx * 2, cy * 2);
+
+      ctx.fillStyle = "#ff8";
+      for (i = -100; i < 100; i += 3) {
+        for (j = -100; j < 100; j += 4) {
+          x = i; z = j; y = 25;
+          point = rasterizePoint(x, y, z);
+          if (point.d != -1) {
+            size = 250 / (1 + point.d);
+            d = Math.sqrt(x * x + z * z);
+            a = 0.75 - Math.pow(d / 100, 6) * 0.75;
+            if (a > 0) {
+              ctx.globalAlpha = a;
+              ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+            }
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+      for (i = 0; i < seeds.length; ++i) {
+        point = rasterizePoint(seeds[i].x, seeds[i].y, seeds[i].z);
+        if (point.d != -1) {
+          size = 200 / (1 + point.d);
+          ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+        }
+      }
+      point1 = new Object();
+      for (i = 0; i < sparks.length; ++i) {
+        point = rasterizePoint(sparks[i].x, sparks[i].y, sparks[i].z);
+        if (point.d != -1) {
+          size = sparks[i].radius * 200 / (1 + point.d);
+          if (sparks[i].alpha < 0) sparks[i].alpha = 0;
+          if (sparks[i].trail.length) {
+            point1.x = point.x;
+            point1.y = point.y;
+            switch (sparks[i].img) {
+              case sparkPics[0]: ctx.strokeStyle = "#f84"; break;
+              case sparkPics[1]: ctx.strokeStyle = "#84f"; break;
+              case sparkPics[2]: ctx.strokeStyle = "#8ff"; break;
+              case sparkPics[3]: ctx.strokeStyle = "#fff"; break;
+              case sparkPics[4]: ctx.strokeStyle = "#4f8"; break;
+              case sparkPics[5]: ctx.strokeStyle = "#f44"; break;
+              case sparkPics[6]: ctx.strokeStyle = "#f84"; break;
+              case sparkPics[7]: ctx.strokeStyle = "#84f"; break;
+              case sparkPics[8]: ctx.strokeStyle = "#fff"; break;
+              case sparkPics[9]: ctx.strokeStyle = "#44f"; break;
+            }
+            for (j = sparks[i].trail.length - 1; j >= 0; --j) {
+              point2 = rasterizePoint(sparks[i].trail[j].x, sparks[i].trail[j].y, sparks[i].trail[j].z);
+              if (point2.d != -1) {
+                ctx.globalAlpha = j / sparks[i].trail.length * sparks[i].alpha / 2;
+                ctx.beginPath();
+                ctx.moveTo(point1.x, point1.y);
+                ctx.lineWidth = 1 + sparks[i].radius * 10 / (sparks[i].trail.length - j) / (1 + point2.d);
+                ctx.lineTo(point2.x, point2.y);
+                ctx.stroke();
+                point1.x = point2.x;
+                point1.y = point2.y;
+              }
+            }
+          }
+          ctx.globalAlpha = sparks[i].alpha;
+          ctx.drawImage(sparks[i].img, point.x - size / 2, point.y - size / 2, size, size);
+        }
+      }
+    }
+
+    function frame () {
+
+      if (frames > 100000) {
+        seedTimer = 0;
+        frames = 0;
+      }
+      frames++;
+      draw();
+      doLogic();
+      requestAnimationFrame(frame);
+    }
+
+    window.addEventListener("resize", () => {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      cx = canvas.width / 2;
+      cy = canvas.height / 2;
+    });
+
+    var box = document.getElementsByClassName("box")[0];
+    var img = box.getElementsByTagName("a");
+    box.onmouseover = function () {
+      for (var i = 0; i < img.length; i++) {
+        img[i].style.transition = "all 1s";
+      }
+    }
+    box.onmouseout = function () {
+      for (var i = 0; i < img.length; i++) {
+        img[i].style.transition = "all 1s";
+      }
+    }
+
+    initVars();
+    frame();
+
+    function GetRequest () {
+      var url = location.search; //获取url中"?"符后的字串
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+  </script>
+  <script src="./js/index.js"></script>
+  <script src="./js/sakuraPlus.js"></script>
+</body>
+
+</html>

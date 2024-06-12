@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>VIP视频云解析</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link type="text/css" href="./assets/css/argon.min.css" rel="stylesheet" />
+  <script src="./assets/vendor/jquery/jquery.min.js"></script>
+  <script src="./assets/vendor/jquery/jquery.cookie.min.js"></script>
+  <script src="./assets/vendor/popper/popper.min.js"></script>
+  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="./assets/vendor/headroom/headroom.min.js"></script>
+  <script src="./assets/js/argon.min.js"></script>
+
+</head>
+
+<body>
+  <div class="profile-page" style="background: linear-gradient(to bottom, Linen, LightCyan, LightYellow, Wheat);">
+    <div class="container" style="padding-top:420px;height: 100vh;">
+      <div class="card card-profile shadow mt--300 " style="border-radius: 30px;">
+        <div class="px-4" style="height: 68vh;">
+          <div class="row justify-content-center" style="height: 60px;">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image">
+                <a href="#">
+                  <img src="./assets/img/appIcon.png" class="rounded-bottom" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hr mt-4"></div>
+          <form>
+            <div class="form-group row">
+              <span class="col-sm-2 col-form-label text-right">请选择API:</span>
+              <div class="col-sm-10">
+                <select id="api" name="api" class="form-control"></select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <span class="col-sm-2 col-form-label text-right ">视频地址:</span>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="url" placeholder="视频地址">
+              </div>
+            </div>
+            <div class=" text-center">
+              <button id="play" class="btn btn-primary btn-round"><i class="fa fa-send-o"></i> 开 始 解 析</button>
+            </div>
+            </br>
+            <div class=" text-center">
+              <button class="btn btn-primary btn-round"><i class="fa fa-send-o"></i>
+                复制下方任意视频网站VIP链接，粘贴到视频地址栏，点击开始解析即可跳转</button>
+            </div>
+          </form>
+
+          <div class="main text-center sr-only sr-only-focusable">
+            <div class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <textarea rows="10" id="apiList" class="form-control">
+                    http://api.apii.top/?v=
+                    http://www.wpsseo.cn/line.php?n=7&url=
+                    https://player.iizny.com/?url=
+                    https://vip.hfyj.ml/player/?url=
+                    https://jx.aidouer.net/?url=
+                    http://vip.xxphp.cn/player.html?url=
+                    https://55o.co/?url=
+                    https://chaxun.truechat365.com/?url=
+                    https://jx.777jiexi.com/player/?url=
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="mt-5 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-sm-9">
+
+                <a class="btn btn-success mt-3" href="http://www.le.com/" rel="nofollow" target="_blank">乐视视频</a>
+                <a class="btn btn-danger mt-3" href="http://www.iqiyi.com/" rel="nofollow" target="_blank">奇艺视频</a>
+                <a class="btn btn-info mt-3" href="http://www.mgtv.com/" rel="nofollow" target="_blank">芒果视频</a>
+                <a class="btn btn-warning  mt-3" href="http://www.tudou.com/" rel="nofollow" target="_blank">土豆视频</a>
+
+                <br>
+                <div class="hr "></div>
+                <a class="btn btn-primary mt-3" href="http://v.qq.com/" rel="nofollow" target="_blank">腾讯视频</a>
+                <a class="btn btn-info mt-3" href="http://www.youku.com/" rel="nofollow" target="_blank">优酷视频</a>
+                <a class="btn btn-success mt-3" href="http://tv.sohu.com/" rel="nofollow" target="_blank">搜狐视频</a>
+                <a class="btn btn-primary mt-3" href="http://www.pptv.com/" rel="nofollow" target="_blank">pptv视频</a>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div div class="row align-items-center justify-content-md-between">
+            <div class="col-md-2">
+              <div class="copyright">
+                @成同学.com
+              </div>
+            </div>
+            <div class="col-md-2">
+              <ul class="nav nav-footer justify-content-end">
+
+                <li class="nav-item">
+                  <a href="http://chen-show.gitee.io/vue/" class="nav-link" target="_blank">一个友链</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://gitee.com/chen-1999" class="nav-link" target="_blank">码云</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setApi () {
+      $("#api").children().remove()
+      var apilist = $("#apiList").val().split(/\r?\n/);
+      for (var i = 0; i < apilist.length; i++) {
+        $("#api").append("<option>" + apilist[i] + "</option>")
+      }
+    }
+    $("#apiList").blur(function () {
+      setApi()
+      $.cookie("apiList", $("#apiList").val())
+    })
+    $("#play").click(function () {
+      $api = $("#api").val()
+      $url = $("#url").val()
+      if ($url == "" || $url == null || !/^http.*$/.test($url)) {
+        alert('视频地址不正确！')
+        return
+      }
+      if ($url == "" || $url == null || !/^http.*=$/.test($api)) {
+        alert('无效API！')
+        return
+      }
+      window.open($api + $url)
+    })
+    function init () {
+      var ckapi = $.cookie("apiList")
+      if (ckapi && ckapi != "") {
+        $("#apiList").val(ckapi)
+      }
+      setApi()
+    }
+    init()
+    function setDefault () {
+      $.cookie("apiList", "")
+      window.location.reload()
+    }
+    console.group("欢迎使用视频解析系统")
+    console.log("vip视频解析域名：chen1999.eu.org")
+    console.groupEnd()
+  </script>
+
+  <script type="text/javascript" color="0,200,188" opacity="0.8" zIndex="1" count="88"
+    src="./assets/js/canvas-nest.min.js"></script>
+
+</body>
+
+</html>

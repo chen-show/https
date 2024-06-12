@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    html {
+      overflow: hidden;
+      touch-action: none;
+      content-zooming: none;
+    }
+    ::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+      background-color: #0D9696;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 0px #0D9696;
+      border-radius: 10px;
+      background-color: #0D9696;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 0px #a1dddd;
+      background-color: #a5dfdf;
+    }
+  </style>
+
+</head>
+
+<body>
+  <script type="application/javascript">
+    if (document.querySelector('#iframeChen')) document.querySelector('#iframeChen').remove()
+    window.onload = function () {
+      const name = window.location.search
+      const iframe = document.createElement('iframe')
+      iframe.src = `.${name.replace('?', '/')}`
+      iframe.id = 'iframeChen'
+      iframe.width = '100%'
+      iframe.scrolling = 'auto'
+      iframe.height = '800'
+      iframe.frameborder = '0'
+      document.body.appendChild(iframe)
+      iframe.oncontextmenu = function () { return false }
+      iframe.onkeydown = iframe.onkeyup = iframe.onkeypress = function () {
+        let e = event || window.event || arguments.callee.caller.arguments[0]
+        if (e && e.keyCode == 123) {
+          e.returnValue = false
+          return false
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>music-cli</title><link href="css/chunk-12f7a4ee.fe756875.css" rel="prefetch"><link href="css/chunk-17ad2ba4.7fdbb1a7.css" rel="prefetch"><link href="css/chunk-1e3b75eb.8ffc78a8.css" rel="prefetch"><link href="css/chunk-2b3be2db.c61919d3.css" rel="prefetch"><link href="css/chunk-2cebf294.8f0e15b8.css" rel="prefetch"><link href="css/chunk-31b4ce18.e6eb0300.css" rel="prefetch"><link href="css/chunk-3af4d67b.59e52dbc.css" rel="prefetch"><link href="css/chunk-4407ec58.6acec694.css" rel="prefetch"><link href="css/chunk-5842ac32.5e564187.css" rel="prefetch"><link href="css/chunk-5e75b654.b5b683f2.css" rel="prefetch"><link href="css/chunk-65ab59b0.d034ad49.css" rel="prefetch"><link href="css/chunk-6f2decfc.c708e5c0.css" rel="prefetch"><link href="css/chunk-9f906ec8.c3c207a2.css" rel="prefetch"><link href="css/chunk-ba9a3cc0.50dd91df.css" rel="prefetch"><link href="css/chunk-fe29da9e.791ef609.css" rel="prefetch"><link href="js/chunk-12f7a4ee.ee35cce4.js" rel="prefetch"><link href="js/chunk-17ad2ba4.53358fd9.js" rel="prefetch"><link href="js/chunk-1e3b75eb.9af06a9c.js" rel="prefetch"><link href="js/chunk-2b3be2db.2825b498.js" rel="prefetch"><link href="js/chunk-2cebf294.ad6c171e.js" rel="prefetch"><link href="js/chunk-31b4ce18.4c5efd90.js" rel="prefetch"><link href="js/chunk-3af4d67b.24f3d894.js" rel="prefetch"><link href="js/chunk-4407ec58.3a384176.js" rel="prefetch"><link href="js/chunk-5842ac32.674aff5b.js" rel="prefetch"><link href="js/chunk-5e75b654.010e5871.js" rel="prefetch"><link href="js/chunk-65ab59b0.d85eb038.js" rel="prefetch"><link href="js/chunk-6f2decfc.8f1125bc.js" rel="prefetch"><link href="js/chunk-9f906ec8.ab97c3cb.js" rel="prefetch"><link href="js/chunk-ba9a3cc0.5612b5cf.js" rel="prefetch"><link href="js/chunk-fe29da9e.2c9f17ba.js" rel="prefetch"><link href="css/app.0321da9a.css" rel="preload" as="style"><link href="css/chunk-vendors.82d47794.css" rel="preload" as="style"><link href="js/app.854e2371.js" rel="preload" as="script"><link href="js/chunk-vendors.e3f14cc3.js" rel="preload" as="script"><link href="css/chunk-vendors.82d47794.css" rel="stylesheet"><link href="css/app.0321da9a.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but music-cli doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="js/chunk-vendors.e3f14cc3.js"></script><script src="js/app.854e2371.js"></script></body><script>document.addEventListener('plusready', function () {
+      var webview = plus.webview.currentWebview()
+      plus.key.addEventListener('backbutton', function () {
+        webview.canBack(function (e) {
+          if (e.canBack) {
+            webview.back()
+          } else {
+            // 首页返回键处理
+            // 处理逻辑：1秒内，连续两次按返回键，则退出应用；
+            var first = null
+            plus.key.addEventListener('backbutton', function () {
+              // 首次按键，提示‘再按一次退出应用’
+              if (!first) {
+                first = new Date().getTime()
+                console.log('再按一次退出应用')
+                setTimeout(function () {
+                  first = null
+                }, 1000)
+              } else {
+                if (new Date().getTime() - first < 1500) {
+                  plus.runtime.quit()
+                }
+              }
+            }, false)
+          }
+        })
+      })
+    })</script></html>

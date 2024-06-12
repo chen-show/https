@@ -1,0 +1,67 @@
+#page7{
+    background: url(../img/p7/bj.png) no-repeat;
+    background-size: 100% 100%;
+}
+.page7_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -160px;
+    margin-top: -160px;
+    width: 320px;
+    height: 320px;
+    border: 1px solid #b595ff;
+}
+.line_row{
+    width: 320px;
+    height: 106px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line_row>span{
+    margin: 3px 3px;
+    width: 100px;
+    height: 100px;
+    transition: all 1s ease;
+    /* background-color: sandybrown; */
+    background-color: rgb(255, 242, 231);
+}
+.page7_title{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin-left: -60px;
+    margin-top: -15px;
+}
+.page7_title>h2{
+    width: 120px;
+    height: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    color: steelblue;
+    background: center #f8ffcd url(../img/p7/gif_font.gif);
+    -webkit-user-drag: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.page7_footer{
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin-left: -60px;
+    margin-top: -15px;
+}
+.page7_footer>button{
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: thistle;
+}

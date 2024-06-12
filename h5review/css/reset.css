@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+.app{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(211, 211, 211);
+    overflow: hidden;
+}
+.content{
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s ease;
+    /* transform: translateY(-600%); */
+}
+.page:hover{
+    transition: all 1s ease;
+    border-radius: 50px;
+    box-shadow: 0 0 1px 3px #d6d9ff;
+}
+.page{
+    width: 420px;
+    height: 740px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 0;
+    margin-left: -210px;
+    margin-top: 20px;
+}
+.music{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+.music>img{
+    width: 40px;
+    height: 40px;
+    /* animation: music 2s infinite linear; */
+}
+@keyframes music{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+}
+.page_down{
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    cursor: pointer;
+    animation: down 2s infinite linear
+}
+.page_down>img{
+    width: 20px;
+    height: 20px;
+}
+@keyframes down{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-20px);}
+    100%{transform: translateY(0);}
+}
+
+
+.loading{
+    width: 80px;
+    height: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+}
+.loading>span{
+    display: inline-block;
+    width: 8px;
+    height: 100%;
+    border-radius: 4px;
+    background: lightgreen;
+    animation: load 1s ease infinite;
+}
+.loading>span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loading>span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.loading>span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.loading>span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.loading>h4{
+    text-align: center;
+    position: relative;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4vw;
+    font-weight: 800;
+    background: center #D58512 url(../img/common/login-bg.gif);
+    -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;	
+}
+
+
+
+
+
+
+@keyframes load {
+    0%,
+    100% {
+        height: 40px;
+        background: lightgreen;
+    }
+    50% {
+        height: 80px;
+        margin: -15px 0;
+        background: lightblue;
+    }
+}
+
+
+
+
+
+@media (max-width:1024px){
+    .page{
+        margin-top: 0;
+    }
+    .page_down>img{
+        display: none;
+    }
+}
